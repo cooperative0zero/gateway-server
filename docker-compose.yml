@@ -1,0 +1,13 @@
+services:
+  gateway:
+    image: 'gateway-server:latest'
+    build:
+      dockerfile: Dockerfile
+    container_name: gateway-server
+    ports: 
+      - "8000:8080"
+    networks:
+        - microservices-network
+networks:
+  microservices-network:
+    external: true
