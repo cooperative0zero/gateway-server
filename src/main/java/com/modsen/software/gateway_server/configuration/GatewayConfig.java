@@ -23,6 +23,8 @@ public class GatewayConfig {
                         .uri("lb://driver-service/api/v1/cars"))
                 .route("ratings_service", r -> r.path("/api/v1/ratings/**")
                         .uri("lb://ratings-service/api/v1/ratings"))
+                .route("auth_service", r -> r.path("/auth/**")
+                        .uri("lb://auth-server/auth"))
                 .build();
     }
 }
